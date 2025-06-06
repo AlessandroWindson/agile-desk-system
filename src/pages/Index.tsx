@@ -3,17 +3,18 @@ import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Navbar } from "@/components/ui/navbar";
-import { useTheme } from "next-themes";
+import { TechSidebar } from "@/components/ui/tech-sidebar";
 
 const Index = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
+
 
 
 
   return (
     <div className="min-h-screen bg-tech-dark">
       <Navbar onToggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} isSidebarOpen={isSidebarOpen} />
+      <TechSidebar open={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
 
       <div className="container mx-auto px-4 pt-20">
         <div className="relative w-full max-w-md">

@@ -1,6 +1,5 @@
-import { useState } from "react";
-import { Button } from "./button";
-import { Menu, X, ChevronRight, ChevronLeft, Sun, Moon } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTheme } from "next-themes";
 
@@ -9,11 +8,10 @@ interface NavbarProps {
   isSidebarOpen: boolean;
 }
 
-export function Navbar({ onToggleSidebar, isSidebarOpen }: NavbarProps) {
+export const Navbar = ({ onToggleSidebar, isSidebarOpen }: NavbarProps) => {
   const { theme, setTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Efeito de scroll
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -41,41 +39,50 @@ export function Navbar({ onToggleSidebar, isSidebarOpen }: NavbarProps) {
 
           {/* Menu Mobile */}
           <div className="md:hidden">
-            <Button
-              variant="ghost"
-              size="icon"
+            <button
               onClick={onToggleSidebar}
+              className="p-2 rounded-lg hover:bg-tech-dark/30 transition-colors"
             >
               {isSidebarOpen ? (
                 <X className="h-6 w-6" />
               ) : (
                 <Menu className="h-6 w-6" />
               )}
-            </Button>
+            </button>
           </div>
 
           {/* Menu Desktop */}
           <div className="hidden md:flex items-center space-x-4">
-            <Link to="/dashboard" className="text-tech-gray hover:text-tech-blue transition-colors">
-              Dashboard
+            <Link to="/dashboard" className="tech-link flex items-center gap-2">
+              <span className="text-tech-gray hover:text-tech-blue transition-colors">Dashboard</span>
+              <span className="text-tech-purple text-xs font-mono">/db</span>
             </Link>
-            <Link to="/suporte" className="text-tech-gray hover:text-tech-blue transition-colors">
-              Suporte
+            <Link to="/suporte" className="tech-link flex items-center gap-2">
+              <span className="text-tech-gray hover:text-tech-blue transition-colors">Suporte</span>
+              <span className="text-tech-purple text-xs font-mono">/sp</span>
             </Link>
-            <Link to="/agendamentos" className="text-tech-gray hover:text-tech-blue transition-colors">
-              Agendamentos
+            <Link to="/agendamentos" className="tech-link flex items-center gap-2">
+              <span className="text-tech-gray hover:text-tech-blue transition-colors">Agendamentos</span>
+              <span className="text-tech-purple text-xs font-mono">/ag</span>
             </Link>
-            <Button
-              variant="ghost"
-              size="icon"
+            <Link to="/usuarios" className="tech-link flex items-center gap-2">
+              <span className="text-tech-gray hover:text-tech-blue transition-colors">Usuários</span>
+              <span className="text-tech-purple text-xs font-mono">/us</span>
+            </Link>
+            <Link to="/configuracoes" className="tech-link flex items-center gap-2">
+              <span className="text-tech-gray hover:text-tech-blue transition-colors">Configurações</span>
+              <span className="text-tech-purple text-xs font-mono">/cfg</span>
+            </Link>
+            <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="p-2 rounded-lg hover:bg-tech-dark/30 transition-colors"
             >
               {theme === "dark" ? (
                 <Sun className="h-5 w-5" />
               ) : (
                 <Moon className="h-5 w-5" />
               )}
-            </Button>
+            </button>
           </div>
         </div>
       </div>
