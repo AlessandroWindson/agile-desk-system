@@ -24,7 +24,6 @@ export async function authMiddleware(
     const token = authHeader.split(' ')[1];
     
     // Verificar token diretamente
-    // Verificar token diretamente
     const { data: { session }, error: authError } = await supabase.auth.getSession({
       token
     });
@@ -39,27 +38,8 @@ export async function authMiddleware(
       return;
     }
 
-    if (!session) {
-      logger.error('Sessão não encontrada');
-      next({
-        message: 'Sessão não encontrada',
-        status: 401
-      });
-      return;
-    }
-
-    if (authError) {
-      logger.error(`Erro ao verificar token de autenticação: ${authError.message}`);
-      next({
-        message: 'Erro ao verificar token de autenticação',
-        status: 401,
-        details: authError.message
-      });
-      return;
-    }
-
-    if (!session) {
-      logger.error('Sessão não encontrada');
+    if (!session || !session.user) {
+      logger.error('Sessão ou usuário não encontrados');
       next({
         message: 'Sessão não encontrada',
         status: 401
