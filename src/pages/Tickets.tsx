@@ -63,9 +63,9 @@ const Tickets = () => {
       titulo: item.titulo,
       descricao: item.descricao,
       categoria: item.categoria,
-      prioridade: item.prioridade,
-      status: item.status,
-      created_at: item.created_at,
+      prioridade: item.prioridade || 'media', // Valor padrão se for null
+      status: item.status || 'aberto', // Valor padrão se for null
+      created_at: item.created_at || new Date().toISOString(), // Valor padrão se for null
       usuario_id: item.usuario_id,
       tecnico_id: item.tecnico_id,
       profiles: Array.isArray(item.profiles) ? item.profiles[0] : item.profiles
