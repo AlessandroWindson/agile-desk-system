@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: helpdesk-config
+  labels:
+    app: helpdesk
+
+---
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: helpdesk-secrets
+  labels:
+    app: helpdesk
+type: Opaque
+stringData:
+  supabase-url: ""  # Preencher com URL do Supabase
+  supabase-anon-key: ""  # Preencher com chave anon do Supabase

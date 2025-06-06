@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helpdesk-frontend
+  labels:
+    app: helpdesk-frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: helpdesk-frontend
+  template:
+    metadata:
+      labels:
+        app: helpdesk-frontend
+    spec:
+      containers:
+      - name: helpdesk-frontend
+        image: helpdesk/frontend:latest
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 10
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: helpdesk-frontend
+spec:
+  selector:
+    app: helpdesk-frontend
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+  type: ClusterIP

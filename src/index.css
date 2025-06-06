@@ -1,0 +1,173 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 199 89% 48%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 199 89% 48%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 199 89% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 199 89% 48%;
+
+    /* Tech Colors */
+    --tech-blue: 56 189 248;
+    --tech-purple: 147 51 234;
+    --tech-pink: 236 72 153;
+    --tech-cyan: 34 211 238;
+    --tech-gray: 148 163 184;
+    --tech-navy: 15 23 42;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-gradient-dark text-foreground antialiased;
+    background-attachment: fixed;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .font-orbitron {
+    font-family: 'Orbitron', monospace;
+  }
+
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .bg-gradient-dark {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  }
+
+  .bg-gradient-tech {
+    background: linear-gradient(135deg, rgb(56, 189, 248) 0%, rgb(147, 51, 234) 50%, rgb(236, 72, 153) 100%);
+  }
+
+  .bg-gradient-glass {
+    background: rgba(15, 23, 42, 0.4);
+  }
+
+  .glass-effect {
+    @apply bg-gradient-glass backdrop-blur-3xl border border-white/10;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  }
+
+  .tech-glow {
+    box-shadow: 0 0 40px rgba(56, 189, 248, 0.4), 0 0 80px rgba(147, 51, 234, 0.2);
+  }
+
+  .hover-glow:hover {
+    @apply tech-glow;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .text-tech-blue {
+    color: rgb(56, 189, 248);
+  }
+
+  .text-tech-purple {
+    color: rgb(147, 51, 234);
+  }
+
+  .text-tech-pink {
+    color: rgb(236, 72, 153);
+  }
+
+  .text-tech-cyan {
+    color: rgb(34, 211, 238);
+  }
+
+  .text-tech-gray {
+    color: rgb(148, 163, 184);
+  }
+
+  .bg-tech-navy {
+    background-color: rgb(15, 23, 42);
+  }
+
+  .border-tech-blue {
+    border-color: rgb(56, 189, 248);
+  }
+
+  .backdrop-blur-glass {
+    backdrop-filter: blur(25px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(56, 189, 248, 0.8), 0 0 60px rgba(147, 51, 234, 0.4);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, rgb(56, 189, 248), rgb(147, 51, 234));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, rgb(34, 211, 238), rgb(168, 85, 247));
+}
+
+/* Smooth animations for all elements */
+* {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
