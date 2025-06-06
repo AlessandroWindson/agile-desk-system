@@ -137,6 +137,7 @@ export const TechSidebar = ({ open, onClose }: TechSidebarProps) => {
         </div>
       </div>
     </div>
-  );
+  )
+}
 
 export default TechSidebar;
