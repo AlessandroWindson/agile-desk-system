@@ -24,13 +24,25 @@ export async function authMiddleware(
     const token = authHeader.split(' ')[1];
     
     // Verificar token diretamente
-    const { data: { session }, error: authError } = await supabase.auth.getSession();
-    
-    // Verificar se o token é válido
-    if (session?.access_token !== token) {
-      logger.error('Token de acesso inválido');
+    // Verificar token diretamente
+    const { data: { session }, error: authError } = await supabase.auth.getSession({
+      token
+    });
+
+    if (authError) {
+      logger.error(`Erro ao verificar token: ${authError.message}`);
       next({
-        message: 'Token de acesso inválido',
+        message: 'Erro ao verificar token',
+        status: 401,
+        details: authError.message
+      });
+      return;
+    }
+
+    if (!session) {
+      logger.error('Sessão não encontrada');
+      next({
+        message: 'Sessão não encontrada',
         status: 401
       });
       return;

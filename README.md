@@ -237,36 +237,91 @@ pnpm dev
 
 #### 2. Configurar Variáveis de Ambiente
 
-Edite os arquivos `.env` (backend) e `.env.local` (frontend):
+Crie um arquivo `.env` na pasta `backend` com as seguintes configurações:
 
 ```env
-# 🔑 Configurações do Backend
-PORT=3000
-NODE_ENV=development
+# Porta da aplicação
+PORT=5000
 
-# 🔑 Configurações do Supabase
+# URL do frontend (para CORS)
+CLIENT_URL=http://localhost:3000
+
+# Configurações do Supabase
 SUPABASE_URL=https://seu-projeto.supabase.co
 SUPABASE_ANON_KEY=sua-chave-anonima-aqui
 
-# 📧 Configurações SMTP (Email)
+# Configurações do ambiente
+NODE_ENV=development
+JWT_SECRET=sua-chave-secreta-aqui
+JWT_EXPIRES_IN=24h
+LOG_LEVEL=info
+ENVIRONMENT=development
+
+# Configurações do Socket.io
+SOCKET_PORT=5000
+
+# Configurações do banco de dados (quando não usar Supabase)
+# DB_HOST=localhost
+# DB_PORT=5432
+# DB_NAME=helpdesk_pro
+# DB_USER=postgres
+# DB_PASSWORD=your_password
+
+# Configurações SMTP (Email)
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
+SMTP_SECURE=true
 SMTP_USER=seu-email@gmail.com
 SMTP_PASS=sua-senha-app
 
-# 📝 Configurações do Logger
-LOG_LEVEL=debug
-LOG_DIR=./logs
-
-# 🔐 Configurações de Segurança
-JWT_SECRET=sua-chave-secreta-aqui
-SESSION_SECRET=sua-chave-de-sessao-aqui
-
-# 🌍 Configurações do App (Frontend)
+# Configurações do App (Frontend)
 VITE_SUPABASE_URL=https://seu-projeto.supabase.co
 VITE_SUPABASE_ANON_KEY=sua-chave-anonima-aqui
 VITE_APP_URL=http://localhost:5173
 VITE_APP_NAME="HelpDesk Pro"
+```
+
+### 🔄 Configurações Obrigatórias
+
+1. **Supabase**:
+   - `SUPABASE_URL`: URL do seu projeto no Supabase
+   - `SUPABASE_ANON_KEY`: Chave anon do seu projeto
+
+2. **JWT**:
+   - `JWT_SECRET`: Chave secreta para tokens JWT
+   - `JWT_EXPIRES_IN`: Tempo de expiração do token (ex: 24h)
+
+3. **Email (SMTP)**:
+   - `SMTP_USER`: Seu email do Gmail
+   - `SMTP_PASS`: Senha de app do Gmail
+
+### 🔐 Segurança das Credenciais
+
+- **Nunca compartilhe o arquivo `.env`**
+- **Use senhas fortes** para `JWT_SECRET`
+- **Use senha de app do Gmail** (não sua senha normal)
+- **Não comite o arquivo `.env` no git**
+- **Mantenha suas credenciais seguras**
+
+### 🚀 Iniciando o Projeto
+
+1. Configure o arquivo `.env` com suas credenciais
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
+3. Inicie o servidor:
+   ```bash
+   npm run dev
+   ```
+4. Acesse o frontend em `http://localhost:3000`
+
+### 📝 Notas Importantes
+
+- O projeto usa Supabase como backend por padrão
+- As configurações de banco de dados (PostgreSQL) estão comentadas
+- O JWT está configurado para expirar em 24 horas
+- O log level está configurado como "info" para produção
 ```
 
 #### 3. Executar Migrations do Banco
