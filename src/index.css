@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -131,12 +130,35 @@
     background-color: rgb(15, 23, 42);
   }
 
+  .bg-tech-dark {
+    background-color: rgb(15, 23, 42);
+  }
+
   .border-tech-blue {
     border-color: rgb(56, 189, 248);
   }
 
   .backdrop-blur-glass {
     backdrop-filter: blur(25px);
+  }
+
+  /* Sidebar animations */
+  .sidebar-enter {
+    transform: translateX(-100%);
+  }
+
+  .sidebar-enter-active {
+    transform: translateX(0);
+    transition: transform 300ms ease-in-out;
+  }
+
+  .sidebar-exit {
+    transform: translateX(0);
+  }
+
+  .sidebar-exit-active {
+    transform: translateX(-100%);
+    transition: transform 300ms ease-in-out;
   }
 }
 
