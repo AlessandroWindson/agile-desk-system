@@ -5,15 +5,15 @@
 
 ![HelpDesk Pro Logo](https://img.shields.io/badge/HelpDesk-Pro-00d4ff?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJMMTMuMDkgOC4yNkwyMCA5TDEzLjA5IDE1Ljc0TDEyIDIyTDEwLjkxIDE1Ljc0TDQgOUwxMC45MSA4LjI2TDEyIDJaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K)
 
-[![Made with Love](https://img.shields.io/badge/Made%20with-❤️-red?style=for-the-badge)](https://github.com/seu-usuario/helpdesk-pro)
+[![Made with Love](https://img.shields.io/badge/Made%20with-❤️-red?style=for-the-badge)](https://github.com/helpdesk-pro)
 [![React](https://img.shields.io/badge/React-18.3.1-61dafb?style=for-the-badge&logo=react)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 [![Supabase](https://img.shields.io/badge/Supabase-Database-green?style=for-the-badge&logo=supabase)](https://supabase.io/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38bdf8?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 
-**Sistema moderno e inteligente para gestão completa de suporte técnico com agendamentos automatizados e dashboards em tempo real.**
+**Sistema moderno e inteligente para gestão completa de suporte técnico com autenticação robusta, agendamentos automatizados e dashboards em tempo real.**
 
-[🌟 Demo Ao Vivo](https://seu-site.com) • [📚 Documentação](https://docs.seu-site.com) • [🐛 Reportar Bug](https://github.com/seu-usuario/helpdesk-pro/issues) • [💡 Solicitar Feature](https://github.com/seu-usuario/helpdesk-pro/issues)
+[🌟 Demo Ao Vivo](https://helpdesk-pro.vercel.app) • [📚 Documentação](https://docs.helpdesk-pro.dev) • [🐛 Reportar Bug](https://github.com/helpdesk-pro/issues) • [💡 Solicitar Feature](https://github.com/helpdesk-pro/issues)
 
 </div>
 
@@ -26,11 +26,12 @@
 - [🛠️ Tecnologias Utilizadas](#️-tecnologias-utilizadas)
 - [📦 Instalação e Configuração](#-instalação-e-configuração)
 - [🚀 Como Usar](#-como-usar)
+- [🔐 Sistema de Autenticação](#-sistema-de-autenticação)
 - [🎨 Design System](#-design-system)
 - [📊 Banco de Dados](#-banco-de-dados)
-- [🔐 Autenticação e Segurança](#-autenticação-e-segurança)
-- [📱 Responsividade](#-responsividade)
-- [🔧 Configurações Avançadas](#-configurações-avançadas)
+- [🐳 Docker e Containerização](#-docker-e-containerização)
+- [☸️ Kubernetes (K8s)](#️-kubernetes-k8s)
+- [🚀 CI/CD com Jenkins](#-cicd-com-jenkins)
 - [📈 Performance](#-performance)
 - [🧪 Testes](#-testes)
 - [🚀 Deploy](#-deploy)
@@ -58,10 +59,20 @@ O **HelpDesk Pro** é uma plataforma web moderna desenvolvida para revolucionar 
 ✅ **Falta de Visibilidade** - Dashboard com métricas em tempo real  
 ✅ **Comunicação Fragmentada** - Histórico completo de interações  
 ✅ **Relatórios Manuais** - Geração automática de insights  
+✅ **Acesso Descontrolado** - Sistema de autenticação robusto
+✅ **Falta de Escalabilidade** - Arquitetura preparada para containers
 
 ---
 
 ## ✨ Características Principais
+
+### 🔐 Sistema de Autenticação Completo
+- **👤 Registro de Usuários**: Cadastro completo com validação de dados
+- **🔑 Login Seguro**: Autenticação com email e senha
+- **👥 Perfil de Usuário**: Gerenciamento de informações pessoais
+- **🛡️ Proteção de Rotas**: Controle de acesso às páginas
+- **🔄 Sessões Persistentes**: Manter login entre sessões
+- **📱 Menu de Usuário**: Interface moderna para gerenciar conta
 
 ### 🎛️ Dashboard Inteligente
 - **📊 Métricas em Tempo Real**: Acompanhe KPIs importantes instantaneamente
@@ -84,14 +95,11 @@ O **HelpDesk Pro** é uma plataforma web moderna desenvolvida para revolucionar 
 - **👥 Gestão de Técnicos**: Atribua chamados aos profissionais certos
 - **📊 Analytics de Agenda**: Veja produtividade e ocupação da equipe
 
-### 🔐 Autenticação Robusta
-- **🔐 JWT Authentication**: Middleware robusto com verificação de token
-- **👥 Role-Based Access Control**: Suporte, Admin e Usuário com permissões específicas
-- **🛡️ Middleware de Autenticação**: Validação de sessões e tokens com logging
-- **🔑 Session Management**: Gerenciamento seguro de sessões com Supabase
-- **📝 Tipagem Forte**: TypeScript com interfaces personalizadas para segurança
-- **🛠️ Error Handling**: Tratamento de erros com detalhes e status codes
-- **📄 Logging**: Logs detalhados com Winston para monitoramento
+### 🧭 Navegação Moderna
+- **🍔 Menu Hamburger**: Navegação moderna e intuitiva
+- **📱 Sidebar Tech**: Design futurista com efeitos visuais
+- **⌨️ Atalhos de Teclado**: Navegação rápida com shortcuts
+- **🎨 Animações Suaves**: Transições elegantes e responsivas
 
 ---
 
@@ -106,63 +114,9 @@ O **HelpDesk Pro** é uma plataforma web moderna desenvolvida para revolucionar 
 | **🎨 Tailwind CSS** | 3.4+ | Estilização | Rapidez e consistência visual |
 | **🧩 shadcn/ui** | Latest | Componentes | Design system profissional |
 | **⚡ Vite** | 5.0+ | Build Tool | Desenvolvimento super rápido |
-| **🎭 Framer Motion** | 11.0+ | Animações | Microinterações fluidas |
+| **🔗 React Router** | 6.26+ | Roteamento | Navegação SPA robusta |
 
-### 🧑‍💻 Backend Technologies
-
-| Tecnologia | Versão | Propósito | Benefícios |
-|------------|--------|-----------|------------|
-| **📦 Express** | ^4.18.2 | Framework Web | Rápido e flexível |
-| **🛡️ Winston** | ^3.11.0 | Logging | Logs detalhados e configuráveis |
-| **📧 Nodemailer** | ^6.9.8 | Email | Envio de emails com SMTP |
-| **🔄 CORS** | ^2.8.5 | Segurança | Controle de acesso |
-| **📦 Supabase** | Latest | Backend | Autenticação e banco de dados |
-
-### 🔧 Melhorias do Backend
-
-#### 🔐 Middleware de Autenticação
-- **Verificação Robusta de Tokens**: Validação direta do token JWT
-- **Tipagem Forte**: Interfaces TypeScript para requests autenticados
-- **Logging Completo**: Logs detalhados com Winston
-- **Tratamento de Erros**: Status codes apropriados para cada erro
-
-#### 🛠️ Controllers e Rotas
-- **Tipagem Consistente**: Interfaces para todos os controllers
-- **Tratamento de Erros**: Uso de next para erros
-- **Middleware de Autorização**: Verificação de roles (support, admin)
-- **Handlers Assíncronos**: Melhor controle de fluxo
-
-#### 📧 Sistema de Email
-- **Template Customizado**: Emails profissionais para agendamentos
-- **Configuração SMTP**: Suporte a diferentes provedores
-- **Logs de Envio**: Monitoramento de emails enviados
-- **Erros Tratados**: Recuperação automática de falhas
-
-#### 📊 Banco de Dados
-- **Integração Supabase**: Autenticação e armazenamento
-- **Queries Otimizadas**: Performance melhorada
-- **Segurança de Dados**: Proteção de informações sensíveis
-- **Backup Automático**: Preservação de dados
-
-#### 📈 Performance
-- **Cache de Rotas**: Acesso mais rápido
-- **Validação de Dados**: Zod para entrada de dados
-- **Rate Limiting**: Proteção contra abusos
-- **Logging de Performance**: Monitoramento de tempo de resposta
-
-#### 🛡️ Segurança
-- **Validação de Tokens**: Proteção contra acessos não autorizados
-- **Role-Based Access**: Controle de acesso por perfil
-- **Tipagem Segura**: Prevenção de erros de tipo
-- **Tratamento de Erros**: Proteção contra vazamento de informações
-
-#### 📝 Documentação
-- **Comentários TypeScript**: Documentação automática
-- **Logs Descritivos**: Facilita o debug
-- **Guia de Estilo**: Consistência no código
-- **Boas Práticas**: Segurança e performance
-
-### 🗄️ Backend & Database
+### 🔐 Autenticação e Backend
 
 | Tecnologia | Versão | Propósito | Benefícios |
 |------------|--------|-----------|------------|
@@ -170,20 +124,41 @@ O **HelpDesk Pro** é uma plataforma web moderna desenvolvida para revolucionar 
 | **🐘 PostgreSQL** | 15+ | Banco de Dados | Confiabilidade e performance |
 | **🔐 Row Level Security** | - | Segurança | Dados isolados por usuário |
 | **📡 Real-time** | - | Sincronização | Updates automáticos |
+| **🔑 JWT** | - | Tokens | Autenticação stateless |
+
+### 🐳 DevOps e Infraestrutura
+
+| Tecnologia | Versão | Propósito | Benefícios |
+|------------|--------|-----------|------------|
+| **🐳 Docker** | Latest | Containerização | Ambiente consistente |
+| **☸️ Kubernetes** | 1.28+ | Orquestração | Escalabilidade automática |
+| **🚀 Jenkins** | LTS | CI/CD | Pipeline automatizada |
+| **📦 Node.js** | 18+ | Runtime | Execução JavaScript server-side |
+| **📧 Nodemailer** | 6.9+ | Email | Notificações automáticas |
 
 ### 📦 Principais Dependências
 
 ```json
 {
   "dependencies": {
-    "@supabase/supabase-js": "^2.49.10",
-    "@tanstack/react-query": "^5.56.2",
-    "express": "^4.18.2",
-    "winston": "^3.11.0",
-    "zod": "^3.23.8",
-    "date-fns": "^4.1.0",
-    "nodemailer": "^6.9.8",
-    "cors": "^2.8.5"
+    "@supabase/supabase-js": "^2.44.1",
+    "@tanstack/react-query": "^5.17.20",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.26.2",
+    "lucide-react": "^0.400.0",
+    "tailwind-merge": "^2.5.2",
+    "class-variance-authority": "^0.7.0",
+    "date-fns": "^3.6.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0",
+    "tailwindcss": "^3.4.0"
   }
 }
 ```
@@ -200,30 +175,29 @@ Antes de começar, certifique-se de ter instalado:
 - **📦 npm** v9+ ou **yarn** v1.22+ ou **pnpm** v8+
 - **🐙 Git** ([Download](https://git-scm.com/))
 - **💳 Conta Supabase** (gratuita em [supabase.com](https://supabase.com))
+- **🐳 Docker** (opcional, para containerização)
+- **☸️ kubectl** (opcional, para Kubernetes)
 
 ### 🚀 Instalação Rápida (5 minutos)
 
 ```bash
 # 1️⃣ Clone o repositório
-git clone https://github.com/seu-usuario/helpdesk-pro.git
+git clone https://github.com/helpdesk-pro/helpdesk-pro.git
 cd helpdesk-pro
 
-# 2️⃣ Instale as dependências
+# 2️⃣ Instale as dependências do frontend
 npm install
-# ou
-yarn install
-# ou  
-pnpm install
 
-# 3️⃣ Configure as variáveis de ambiente
-cp .env.example .env.local
+# 3️⃣ Instale as dependências do backend
+cd backend
+npm install
+cd ..
 
-# 4️⃣ Inicie o servidor de desenvolvimento
+# 4️⃣ Configure as variáveis de ambiente
+cp .env.example .env
+
+# 5️⃣ Inicie o servidor de desenvolvimento
 npm run dev
-# ou
-yarn dev
-# ou
-pnpm dev
 ```
 
 ### 🔑 Configuração do Supabase
@@ -232,96 +206,32 @@ pnpm dev
 
 1. Acesse [supabase.com](https://supabase.com) e faça login
 2. Clique em **"New Project"**
-3. Escolha nome: `HelpDesk Pro - Suporte Ágil`
+3. Escolha nome: `HelpDesk Pro - Suporte Técnico`
 4. Anote a **URL** e **anon key** do projeto
 
 #### 2. Configurar Variáveis de Ambiente
 
-Crie um arquivo `.env` na pasta `backend` com as seguintes configurações:
+Crie um arquivo `.env` na raiz do projeto:
 
 ```env
-# Porta da aplicação
-PORT=5000
-
-# URL do frontend (para CORS)
-CLIENT_URL=http://localhost:3000
-
-# Configurações do Supabase
-SUPABASE_URL=https://seu-projeto.supabase.co
-SUPABASE_ANON_KEY=sua-chave-anonima-aqui
-
-# Configurações do ambiente
-NODE_ENV=development
-JWT_SECRET=sua-chave-secreta-aqui
-JWT_EXPIRES_IN=24h
-LOG_LEVEL=info
-ENVIRONMENT=development
-
-# Configurações do Socket.io
-SOCKET_PORT=5000
-
-# Configurações do banco de dados (quando não usar Supabase)
-# DB_HOST=localhost
-# DB_PORT=5432
-# DB_NAME=helpdesk_pro
-# DB_USER=postgres
-# DB_PASSWORD=your_password
-
-# Configurações SMTP (Email)
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=587
-SMTP_SECURE=true
-SMTP_USER=seu-email@gmail.com
-SMTP_PASS=sua-senha-app
-
-# Configurações do App (Frontend)
+# 🔑 Supabase Configuration
 VITE_SUPABASE_URL=https://seu-projeto.supabase.co
 VITE_SUPABASE_ANON_KEY=sua-chave-anonima-aqui
-VITE_APP_URL=http://localhost:5173
+
+# 🌍 App Configuration  
 VITE_APP_NAME="HelpDesk Pro"
-```
+VITE_APP_URL=http://localhost:5173
+VITE_APP_VERSION=2.0.1
 
-### 🔄 Configurações Obrigatórias
+# 🎨 Customization
+VITE_THEME_PRIMARY=#38bdf8
+VITE_THEME_SECONDARY=#a855f7
+VITE_COMPANY_LOGO=/logo.svg
 
-1. **Supabase**:
-   - `SUPABASE_URL`: URL do seu projeto no Supabase
-   - `SUPABASE_ANON_KEY`: Chave anon do seu projeto
-
-2. **JWT**:
-   - `JWT_SECRET`: Chave secreta para tokens JWT
-   - `JWT_EXPIRES_IN`: Tempo de expiração do token (ex: 24h)
-
-3. **Email (SMTP)**:
-   - `SMTP_USER`: Seu email do Gmail
-   - `SMTP_PASS`: Senha de app do Gmail
-
-### 🔐 Segurança das Credenciais
-
-- **Nunca compartilhe o arquivo `.env`**
-- **Use senhas fortes** para `JWT_SECRET`
-- **Use senha de app do Gmail** (não sua senha normal)
-- **Não comite o arquivo `.env` no git**
-- **Mantenha suas credenciais seguras**
-
-### 🚀 Iniciando o Projeto
-
-1. Configure o arquivo `.env` com suas credenciais
-2. Instale as dependências:
-   ```bash
-   npm install
-   ```
-3. Inicie o servidor:
-   ```bash
-   npm run dev
-   ```
-4. Acesse o frontend em `http://localhost:3000`
-
-### 📝 Notas Importantes
-
-- O projeto usa Supabase como backend por padrão
-- As configurações de banco de dados (PostgreSQL) estão comentadas
-- O JWT está configurado para expirar em 24 horas
-- O log level está configurado como "info" para produção
+# 🔧 Development
+VITE_DEBUG_MODE=true
+VITE_API_TIMEOUT=10000
+VITE_MAX_FILE_SIZE=10485760
 ```
 
 #### 3. Executar Migrations do Banco
@@ -387,41 +297,16 @@ CREATE POLICY "Usuários podem inserir seu próprio perfil"
   ON public.profiles FOR INSERT 
   WITH CHECK (auth.uid() = id);
 
--- 🛡️ Políticas de Segurança para Chamados
-CREATE POLICY "Usuários podem ver seus próprios chamados" 
-  ON public.chamados FOR SELECT 
-  USING (auth.uid() = usuario_id OR auth.uid() = tecnico_id);
-
-CREATE POLICY "Usuários podem criar chamados" 
-  ON public.chamados FOR INSERT 
-  WITH CHECK (auth.uid() = usuario_id);
-
-CREATE POLICY "Usuários podem atualizar seus próprios chamados" 
-  ON public.chamados FOR UPDATE 
-  USING (auth.uid() = usuario_id OR auth.uid() = tecnico_id);
-
--- 🛡️ Políticas de Segurança para Agendamentos
-CREATE POLICY "Usuários podem ver seus próprios agendamentos" 
-  ON public.agendamentos FOR SELECT 
-  USING (auth.uid() = usuario_id OR auth.uid() = tecnico_id);
-
-CREATE POLICY "Usuários podem criar agendamentos" 
-  ON public.agendamentos FOR INSERT 
-  WITH CHECK (auth.uid() = usuario_id);
-
-CREATE POLICY "Usuários podem atualizar seus próprios agendamentos" 
-  ON public.agendamentos FOR UPDATE 
-  USING (auth.uid() = usuario_id OR auth.uid() = tecnico_id);
-
 -- ⚙️ Função para criar perfil automaticamente
 CREATE OR REPLACE FUNCTION public.handle_new_user()
 RETURNS TRIGGER AS $$
 BEGIN
-  INSERT INTO public.profiles (id, nome, empresa)
+  INSERT INTO public.profiles (id, nome, empresa, telefone)
   VALUES (
     NEW.id,
     COALESCE(NEW.raw_user_meta_data->>'nome', 'Usuário'),
-    COALESCE(NEW.raw_user_meta_data->>'empresa', '')
+    COALESCE(NEW.raw_user_meta_data->>'empresa', ''),
+    COALESCE(NEW.raw_user_meta_data->>'telefone', '')
   );
   RETURN NEW;
 END;
@@ -433,16 +318,6 @@ CREATE TRIGGER on_auth_user_created
   FOR EACH ROW EXECUTE PROCEDURE public.handle_new_user();
 ```
 
-#### 4. Configurar Authentication
-
-No dashboard do Supabase:
-
-1. Vá em **Authentication** → **Settings**
-2. Configure **Site URL**: `http://localhost:5173`
-3. Adicione **Redirect URLs**: 
-   - `http://localhost:5173/dashboard`
-   - `https://seu-dominio.com/dashboard` (para produção)
-
 ---
 
 ## 🚀 Como Usar
@@ -451,42 +326,127 @@ No dashboard do Supabase:
 
 1. **Acesse a aplicação**: `http://localhost:5173`
 2. **Crie sua conta**: Clique em "Cadastrar" e preencha os dados
-3. **Confirme o email**: Verifique sua caixa de entrada
+3. **Confirme o email**: Verifique sua caixa de entrada (ou desabilite confirmação no Supabase)
 4. **Faça login**: Use suas credenciais para entrar
-5. **Explore o dashboard**: Navegue pelas funcionalidades
+5. **Explore o sistema**: Navegue pelas funcionalidades no menu hamburger
 
-### 🎫 Gerenciando Tickets
+### 🔐 Sistema de Autenticação
 
-#### Criar um Novo Ticket
-1. Vá para **Tickets** no menu lateral
-2. Clique em **"Novo Ticket"** 
-3. Preencha:
-   - **Título**: Resumo do problema
-   - **Categoria**: Hardware, Software, Rede, etc.
-   - **Prioridade**: Alta, Média, Baixa
-   - **Descrição**: Detalhes completos
-4. Clique em **"Criar Ticket"**
+#### Registro de Usuário
+1. Clique em **"Cadastrar"** na página inicial
+2. Preencha os dados:
+   - **Nome Completo**: Seu nome real
+   - **E-mail**: Endereço válido para login
+   - **Empresa**: Nome da sua organização (opcional)
+   - **Telefone**: Contato para comunicação (opcional)
+   - **Senha**: Mínimo 6 caracteres
+   - **Confirmar Senha**: Deve coincidir com a senha
+3. Clique em **"Criar Conta"**
+4. Verifique seu email se a confirmação estiver habilitada
 
-#### Acompanhar Status
-- **🔴 Aberto**: Ticket criado, aguardando atendimento
-- **🟡 Em Andamento**: Técnico trabalhando na solução  
-- **🟢 Fechado**: Problema resolvido
+#### Login
+1. Clique em **"Login"** na página inicial
+2. Digite seu **email** e **senha**
+3. Clique em **"Entrar"**
+4. Será redirecionado para o dashboard
 
-### 📅 Agendamentos
+#### Gerenciar Perfil
+1. Clique no **avatar** no canto superior direito
+2. Acesse **"Perfil"** para editar informações
+3. Use **"Configurações"** para ajustes avançados
+4. **"Sair"** para fazer logout seguro
 
-#### Criar Agendamento
-1. Acesse **Agendamentos** no menu
-2. Clique em **"Novo Agendamento"**
-3. Defina:
-   - **Data e Hora**: Use o calendário interativo
-   - **Tipo de Serviço**: Categoria do atendimento
-   - **Descrição**: Detalhes do que será feito
-4. Confirme o agendamento
+### 🧭 Navegação pelo Sistema
 
-#### Visualizar Agenda
-- **📊 Cards de Estatísticas**: Resumo rápido
-- **📋 Lista de Agendamentos**: Todos os compromissos
-- **🔍 Filtros**: Busque por data, status, tipo
+#### Menu Hamburger
+- **🏠 Home**: Página inicial do sistema
+- **📊 Dashboard**: Visão geral e métricas
+- **🎫 Suporte**: Gerenciar tickets e chamados
+- **📅 Agendamentos**: Calendário de serviços
+- **👥 Usuários**: Gestão de usuários (admin)
+- **⚙️ Configurações**: Configurações do sistema
+- **📚 Documentação**: Guias e manuais
+- **🔌 API**: Interface de desenvolvimento
+- **💻 Terminal**: Comandos do sistema
+
+#### Atalhos de Teclado
+- **⌘ + H**: Ir para Home
+- **⌘ + D**: Abrir Dashboard
+- **⌘ + S**: Acessar Suporte
+- **⌘ + A**: Ver Agendamentos
+- **⌘ + U**: Gerenciar Usuários
+- **⌘ + ,**: Configurações
+- **⌘ + ?**: Documentação
+- **⌘ + K**: API
+- **⌘ + T**: Terminal
+
+---
+
+## 🔐 Sistema de Autenticação
+
+### 🏗️ Arquitetura de Autenticação
+
+O sistema utiliza **Supabase Auth** com as seguintes características:
+
+- **🔑 JWT Tokens**: Autenticação stateless e segura
+- **📧 Email/Password**: Método principal de login
+- **🔄 Sessões Persistentes**: Manter login entre sessões
+- **🛡️ Row Level Security**: Dados isolados por usuário
+- **👥 Perfis de Usuário**: Informações adicionais
+- **🔐 Proteção de Rotas**: Controle de acesso
+- **🚪 Logout Seguro**: Limpeza completa de sessão
+
+### 🔧 Implementação Técnica
+
+#### Contexto de Autenticação
+```typescript
+interface AuthContextType {
+  user: User | null;
+  session: Session | null;
+  loading: boolean;
+  signOut: () => Promise<void>;
+  signIn: (email: string, password: string) => Promise<{ error?: any }>;
+  signUp: (email: string, password: string, metadata?: any) => Promise<{ error?: any }>;
+}
+```
+
+#### Proteção de Rotas
+```typescript
+const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
+  const { user, loading } = useAuth();
+  
+  if (loading) return <LoadingSpinner />;
+  if (!user) return <Navigate to="/login" />;
+  
+  return <>{children}</>;
+};
+```
+
+#### Hook de Autenticação
+```typescript
+const { user, signIn, signUp, signOut, loading } = useAuth();
+
+// Login
+await signIn('usuario@email.com', 'senha123');
+
+// Registro
+await signUp('usuario@email.com', 'senha123', {
+  nome: 'João Silva',
+  empresa: 'Tech Corp'
+});
+
+// Logout
+await signOut();
+```
+
+### 🔒 Segurança
+
+- **🛡️ Validação de Entrada**: Zod schemas para validação
+- **🔐 Senhas Seguras**: Mínimo 6 caracteres
+- **📧 Confirmação de Email**: Opcional via Supabase
+- **🚫 Proteção CSRF**: Tokens anti-falsificação
+- **⏱️ Expiração de Sessão**: Tokens com TTL
+- **🔄 Refresh Automático**: Renovação transparente
 
 ---
 
@@ -500,6 +460,7 @@ O HelpDesk Pro adota uma **estética tecnológica futurista** com:
 - **💎 Glassmorphism**: Efeitos de vidro fosco modernos  
 - **🌈 Gradientes Dinâmicos**: Cores vibrantes e profissionais
 - **✨ Microanimações**: Feedback visual suave e elegante
+- **🔮 Efeitos Tech**: Glows e bordas luminosas
 
 ### 🎨 Paleta de Cores
 
@@ -521,9 +482,21 @@ background: linear-gradient(135deg, #38bdf8 0%, #a855f7 100%);
 background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
 ```
 
-### 🧩 Componentes
+### 🧩 Componentes Personalizados
 
-#### Glassmorphism Effect
+#### Tech Navbar
+- **🍔 Menu Hamburger**: Navegação moderna
+- **🔘 Indicadores de Status**: Sistema online/offline
+- **👤 Menu de Usuário**: Perfil e configurações
+- **⚡ Animações Suaves**: Transições elegantes
+
+#### Tech Sidebar
+- **📱 Responsivo Total**: Adaptação automática
+- **⌨️ Atalhos Visuais**: Shortcuts destacados
+- **🎨 Efeitos Visuais**: Glows e gradientes
+- **📊 Informações do Sistema**: Status e versão
+
+#### Glassmorphism Effects
 ```css
 .glass-effect {
   background: rgba(15, 23, 42, 0.4);
@@ -533,17 +506,7 @@ background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
 }
 ```
 
-#### Tech Glow
-```css
-.tech-glow {
-  box-shadow: 0 0 40px rgba(56, 189, 248, 0.4), 
-              0 0 80px rgba(147, 51, 234, 0.2);
-}
-```
-
 ### 📱 Responsividade Avançada
-
-O sistema é **100% responsivo** com:
 
 - **📱 Mobile First**: Desenvolvido pensando em dispositivos móveis
 - **💻 Desktop Enhanced**: Funcionalidades expandidas em telas grandes
@@ -554,9 +517,7 @@ O sistema é **100% responsivo** com:
 
 ## 📊 Banco de Dados
 
-### 🏗️ Arquitetura
-
-O banco de dados foi projetado com **performance** e **segurança** em mente:
+### 🏗️ Estrutura do Banco
 
 ```mermaid
 erDiagram
@@ -565,16 +526,8 @@ erDiagram
     AUTH_USERS ||--o{ AGENDAMENTOS : "1:N" 
     CHAMADOS ||--o{ AGENDAMENTOS : "1:N"
     
-    AUTH_USERS {
-        uuid id PK
-        string email
-        string encrypted_password
-        json raw_user_meta_data
-        timestamp created_at
-    }
-    
     PROFILES {
-        uuid id PK,FK
+        uuid id PK
         string nome
         string empresa
         string telefone
@@ -620,7 +573,7 @@ Cada tabela possui **políticas de segurança** que garantem:
 - ✅ **Auditoria**: Logs automáticos de todas as operações
 - ✅ **Prevenção de Ataques**: SQL Injection e outros vetores bloqueados
 
-### 📈 Performance
+### 📈 Performance do Banco
 
 - **🚀 Índices Otimizados**: Consultas ultra-rápidas
 - **💾 Cache Inteligente**: Reduz carga no banco
@@ -629,184 +582,398 @@ Cada tabela possui **políticas de segurança** que garantem:
 
 ---
 
-## 🔐 Autenticação e Segurança
+## 🐳 Docker e Containerização
 
-### 🛡️ Recursos de Segurança
+### 📦 Estrutura de Containers
 
-| Recurso | Implementação | Benefício |
-|---------|---------------|-----------|
-| **🔑 Auth JWT** | Supabase Auth | Tokens seguros e escaláveis |
-| **🔒 RLS** | PostgreSQL | Dados isolados por usuário |
-| **🛡️ HTTPS** | Certificado SSL | Comunicação criptografada |
-| **🔐 Password Hash** | bcrypt | Senhas nunca em texto plano |
-| **⏱️ Session Control** | TTL configurável | Logout automático |
+O projeto está preparado para containerização com Docker:
 
-### 👥 Tipos de Usuário
+```
+📁 helpdesk-pro/
+├── 🐳 Dockerfile (Frontend)
+├── 📁 backend/
+│   └── 🐳 Dockerfile (Backend)
+├── 🐳 docker-compose.yml
+└── 📁 infra/
+    └── 🐳 docker-compose.yml
+```
 
-#### 🙋‍♂️ Usuário Padrão
-- Criar e visualizar próprios tickets
-- Agendar atendimentos
-- Editar perfil pessoal
-- Acessar dashboard básico
+### 🚀 Como Executar com Docker
 
-#### 🔧 Técnico
-- Todas as funções do usuário padrão
-- Visualizar tickets atribuídos
-- Atualizar status de chamados
-- Gerenciar agenda de atendimentos
+#### Frontend
+```bash
+# Build da imagem do frontend
+docker build -t helpdesk-pro/frontend .
 
-#### 👨‍💼 Administrador
-- Controle total do sistema
-- Gerenciar usuários e permissões
-- Acessar relatórios avançados
-- Configurações do sistema
+# Executar container
+docker run -p 3000:3000 helpdesk-pro/frontend
+```
 
-### 🔄 Fluxo de Autenticação
+#### Backend
+```bash
+# Build da imagem do backend
+cd backend
+docker build -t helpdesk-pro/backend .
 
-```mermaid
-sequenceDiagram
-    participant U as Usuário
-    participant F as Frontend
-    participant S as Supabase
-    participant D as Database
-    
-    U->>F: Acessa /login
-    F->>U: Exibe formulário
-    U->>F: Submete credenciais
-    F->>S: supabase.auth.signInWithPassword()
-    S->>D: Valida credenciais
-    D->>S: Retorna dados do usuário
-    S->>F: JWT + dados do usuário
-    F->>F: Armazena token no localStorage
-    F->>U: Redireciona para /dashboard
+# Executar container
+docker run -p 5000:5000 helpdesk-pro/backend
+```
+
+#### Docker Compose
+```bash
+# Executar toda a aplicação
+docker-compose up -d
+
+# Ver logs
+docker-compose logs -f
+
+# Parar aplicação
+docker-compose down
+```
+
+### 📋 Docker Compose Configuration
+
+```yaml
+version: '3.8'
+services:
+  frontend:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - VITE_SUPABASE_URL=${VITE_SUPABASE_URL}
+      - VITE_SUPABASE_ANON_KEY=${VITE_SUPABASE_ANON_KEY}
+    depends_on:
+      - backend
+
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_ANON_KEY=${SUPABASE_ANON_KEY}
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
 ```
 
 ---
 
-## 📱 Responsividade
+## ☸️ Kubernetes (K8s)
 
-### 📐 Breakpoints
+### 🎯 Arquitetura Kubernetes
 
-```css
-/* 📱 Extra Small (smartphones) */
-@media (max-width: 475px) { ... }
+O projeto inclui configurações completas para deploy em Kubernetes:
 
-/* 📱 Small (smartphones landscape) */  
-@media (min-width: 640px) { ... }
-
-/* 💻 Medium (tablets) */
-@media (min-width: 768px) { ... }
-
-/* 💻 Large (desktops) */
-@media (min-width: 1024px) { ... }
-
-/* 🖥️ Extra Large (large desktops) */
-@media (min-width: 1280px) { ... }
-
-/* 🖥️ 2X Large (ultra-wide) */
-@media (min-width: 1536px) { ... }
+```
+📁 k8s/
+├── 📄 backend-deployment.yaml
+├── 📄 frontend-deployment.yaml
+├── 📄 configmap.yaml
+├── 📄 ingress.yaml
+└── 📄 hpa.yaml (Horizontal Pod Autoscaler)
 ```
 
-### 🎯 Estratégia Mobile-First
+### 🚀 Deploy no Kubernetes
 
-1. **🎨 Design Base**: Desenvolvido primeiro para mobile
-2. **📈 Progressive Enhancement**: Funcionalidades expandem em telas maiores  
-3. **👆 Touch Targets**: Botões com mínimo 44px de área tocável
-4. **⚡ Performance**: Imagens e assets otimizados por dispositivo
+```bash
+# Aplicar todas as configurações
+kubectl apply -f k8s/
 
-### 📋 Componentes Adaptativos
+# Verificar status dos pods
+kubectl get pods
 
-| Componente | Mobile | Desktop | Comportamento |
-|------------|--------|---------|---------------|
-| **🧭 Navbar** | Menu hamburger | Menu horizontal | Colapsa automaticamente |
-| **📊 Cards** | Coluna única | Grid flexível | 1→2→3→4 colunas |
-| **📝 Forms** | Campos empilhados | Duas colunas | Layout dinâmico |
-| **📋 Tables** | Scroll horizontal | Visualização completa | Responsivo nativo |
+# Verificar serviços
+kubectl get services
+
+# Verificar ingress
+kubectl get ingress
+
+# Verificar HPA
+kubectl get hpa
+```
+
+### 📋 Configurações Principais
+
+#### Deployment do Frontend
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helpdesk-frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: helpdesk-frontend
+  template:
+    metadata:
+      labels:
+        app: helpdesk-frontend
+    spec:
+      containers:
+      - name: frontend
+        image: helpdesk-pro/frontend:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: VITE_SUPABASE_URL
+          valueFrom:
+            configMapKeyRef:
+              name: helpdesk-config
+              key: supabase-url
+```
+
+#### Horizontal Pod Autoscaler
+```yaml
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: helpdesk-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: helpdesk-frontend
+  minReplicas: 2
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70
+```
+
+### 🔧 Comandos Úteis
+
+```bash
+# Escalar deployment manualmente
+kubectl scale deployment helpdesk-frontend --replicas=5
+
+# Ver logs de um pod
+kubectl logs -f pod-name
+
+# Executar shell em um pod
+kubectl exec -it pod-name -- /bin/sh
+
+# Port forward para desenvolvimento
+kubectl port-forward service/helpdesk-frontend 3000:3000
+
+# Deletar recursos
+kubectl delete -f k8s/
+```
 
 ---
 
-## 🔧 Configurações Avançadas
+## 🚀 CI/CD com Jenkins
 
-### ⚙️ Variáveis de Ambiente
+### 🔄 Pipeline Automatizada
 
-```env
-# 🔑 Supabase Configuration
-VITE_SUPABASE_URL=https://seu-projeto.supabase.co
-VITE_SUPABASE_ANON_KEY=sua-chave-anonima
+O projeto inclui um `Jenkinsfile` completo para automação:
 
-# 🌍 App Configuration  
-VITE_APP_NAME="HelpDesk Pro"
-VITE_APP_URL=http://localhost:5173
-VITE_APP_VERSION=1.0.0
-
-# 📧 Email Configuration
-VITE_SMTP_HOST=smtp.gmail.com
-VITE_SMTP_PORT=587
-VITE_FROM_EMAIL=noreply@helpdeskpro.com
-
-# 🎨 Customization
-VITE_THEME_PRIMARY=#38bdf8
-VITE_THEME_SECONDARY=#a855f7
-VITE_COMPANY_LOGO=/logo.svg
-
-# 🔧 Development
-VITE_DEBUG_MODE=true
-VITE_API_TIMEOUT=10000
-VITE_MAX_FILE_SIZE=10485760
+```
+📁 pipeline/
+├── 📄 Jenkinsfile
+├── 📄 docker-compose.test.yml
+└── 📄 k8s-deploy.sh
 ```
 
-### 📦 Scripts Disponíveis
+### 🏗️ Estágios do Pipeline
 
-```json
-{
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "lint:fix": "eslint . --ext ts,tsx --fix",
-    "type-check": "tsc --noEmit",
-    "format": "prettier --write \"src/**/*.{ts,tsx,json,css,md}\"",
-    "analyze": "npx vite-bundle-analyzer",
-    "db:types": "supabase gen types typescript --project-id YOUR_PROJECT_ID > src/types/database.ts"
-  }
+1. **📥 Checkout**: Baixar código do repositório
+2. **📦 Install Dependencies**: Instalar dependências do projeto
+3. **🏗️ Build**: Compilar frontend e backend
+4. **🧪 Test**: Executar testes automatizados
+5. **🐳 Docker Build**: Criar imagens Docker
+6. **📤 Docker Push**: Enviar para registry
+7. **☸️ K8s Deploy**: Deploy no Kubernetes
+8. **📧 Notification**: Notificar resultado
+
+### 📋 Jenkinsfile
+
+```groovy
+pipeline {
+    agent {
+        docker {
+            image 'node:18-alpine'
+            args '-u root'
+        }
+    }
+
+    environment {
+        NPM_TOKEN = credentials('npm-token')
+        DOCKER_HUB_CREDENTIALS = credentials('docker-hub-credentials')
+        KUBECONFIG = credentials('kubeconfig')
+        SUPABASE_URL = credentials('supabase-url')
+        SUPABASE_ANON_KEY = credentials('supabase-anon-key')
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/helpdesk-pro/helpdesk-pro.git'
+            }
+        }
+
+        stage('Install Dependencies') {
+            parallel {
+                stage('Frontend Dependencies') {
+                    steps {
+                        sh 'npm install'
+                    }
+                }
+                stage('Backend Dependencies') {
+                    steps {
+                        sh 'cd backend && npm install'
+                    }
+                }
+            }
+        }
+
+        stage('Build') {
+            parallel {
+                stage('Build Frontend') {
+                    steps {
+                        sh 'npm run build'
+                    }
+                }
+                stage('Build Backend') {
+                    steps {
+                        sh 'cd backend && npm run build'
+                    }
+                }
+            }
+        }
+
+        stage('Test') {
+            parallel {
+                stage('Frontend Tests') {
+                    steps {
+                        sh 'npm run test'
+                    }
+                }
+                stage('Backend Tests') {
+                    steps {
+                        sh 'cd backend && npm run test'
+                    }
+                }
+                stage('E2E Tests') {
+                    steps {
+                        sh 'npm run test:e2e'
+                    }
+                }
+            }
+        }
+
+        stage('Docker Build') {
+            parallel {
+                stage('Build Frontend Docker') {
+                    steps {
+                        script {
+                            docker.build("helpdesk-pro/frontend:${env.BUILD_ID}")
+                        }
+                    }
+                }
+                stage('Build Backend Docker') {
+                    steps {
+                        script {
+                            docker.build("helpdesk-pro/backend:${env.BUILD_ID}")
+                        }
+                    }
+                }
+            }
+        }
+
+        stage('Docker Push') {
+            steps {
+                script {
+                    docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
+                        docker.image("helpdesk-pro/frontend:${env.BUILD_ID}").push()
+                        docker.image("helpdesk-pro/backend:${env.BUILD_ID}").push()
+                        docker.image("helpdesk-pro/frontend:${env.BUILD_ID}").push('latest')
+                        docker.image("helpdesk-pro/backend:${env.BUILD_ID}").push('latest')
+                    }
+                }
+            }
+        }
+
+        stage('Deploy to Kubernetes') {
+            steps {
+                script {
+                    withKubeConfig([credentialsId: 'kubeconfig']) {
+                        sh '''
+                            # Update image tags in k8s manifests
+                            sed -i "s|helpdesk-pro/frontend:latest|helpdesk-pro/frontend:${BUILD_ID}|g" k8s/frontend-deployment.yaml
+                            sed -i "s|helpdesk-pro/backend:latest|helpdesk-pro/backend:${BUILD_ID}|g" k8s/backend-deployment.yaml
+                            
+                            # Apply configurations
+                            kubectl apply -f k8s/configmap.yaml
+                            kubectl apply -f k8s/frontend-deployment.yaml
+                            kubectl apply -f k8s/backend-deployment.yaml
+                            kubectl apply -f k8s/ingress.yaml
+                            kubectl apply -f k8s/hpa.yaml
+                            
+                            # Wait for rollout
+                            kubectl rollout status deployment/helpdesk-frontend
+                            kubectl rollout status deployment/helpdesk-backend
+                        '''
+                    }
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            slackSend(
+                color: 'good',
+                message: "✅ Deploy bem-sucedido para HelpDesk Pro - Build #${env.BUILD_NUMBER} - ${env.BUILD_URL}"
+            )
+        }
+        failure {
+            slackSend(
+                color: 'danger',
+                message: "❌ Falha no deploy HelpDesk Pro - Build #${env.BUILD_NUMBER} - ${env.BUILD_URL}"
+            )
+        }
+        always {
+            cleanWs()
+        }
+    }
 }
 ```
 
-### 🎛️ Configuração do Vite
+### 🔧 Configuração do Jenkins
 
-```typescript
-// vite.config.ts
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import path from 'path'
+#### Plugins Necessários
+- **Docker Pipeline**: Para builds Docker
+- **Kubernetes CLI**: Para deploy no K8s
+- **Slack Notification**: Para notificações
+- **Blue Ocean**: Interface moderna
+- **Pipeline Stage View**: Visualização de estágios
 
-export default defineConfig({
-  plugins: [react()],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
-  },
-  build: {
-    target: 'esnext',
-    minify: 'terser',
-    sourcemap: false,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom'],
-          'ui-vendor': ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu'],
-          'chart-vendor': ['recharts'],
-        }
-      }
-    }
-  },
-  server: {
-    port: 5173,
-    host: true,
-  }
-})
+#### Credenciais Necessárias
+- `npm-token`: Token do NPM
+- `docker-hub-credentials`: Login Docker Hub
+- `kubeconfig`: Configuração Kubernetes
+- `supabase-url`: URL do Supabase
+- `supabase-anon-key`: Chave anônima do Supabase
+
+### 📊 Monitoramento do Pipeline
+
+```bash
+# Ver status do build
+curl -u user:token http://jenkins-url/job/helpdesk-pro/lastBuild/api/json
+
+# Trigger build manualmente
+curl -X POST -u user:token http://jenkins-url/job/helpdesk-pro/build
+
+# Ver logs do build
+curl -u user:token http://jenkins-url/job/helpdesk-pro/lastBuild/consoleText
 ```
 
 ---
@@ -871,6 +1038,9 @@ npm run test:watch
 
 # 🌐 Testes E2E
 npm run test:e2e
+
+# 🔐 Testes de autenticação
+npm run test:auth
 ```
 
 #### 🧩 Tipos de Teste
@@ -879,31 +1049,49 @@ npm run test:e2e
 2. **🔗 Integration Tests**: Fluxos entre componentes  
 3. **🌐 E2E Tests**: Cenários completos de usuário
 4. **📱 Visual Tests**: Screenshots automatizados
+5. **🔐 Auth Tests**: Fluxos de autenticação
 
-### 🎯 Exemplo de Teste
+### 🎯 Exemplo de Teste de Autenticação
 
 ```typescript
-// src/components/__tests__/Button.test.tsx
-import { render, screen, fireEvent } from '@testing-library/react'
-import { Button } from '../Button'
+// src/hooks/__tests__/useAuth.test.tsx
+import { renderHook, act } from '@testing-library/react'
+import { useAuth } from '../useAuth'
 
-describe('Button Component', () => {
-  it('renders correctly', () => {
-    render(<Button>Click me</Button>)
-    expect(screen.getByText('Click me')).toBeInTheDocument()
-  })
-
-  it('handles click events', () => {
-    const handleClick = jest.fn()
-    render(<Button onClick={handleClick}>Click me</Button>)
+describe('useAuth Hook', () => {
+  it('should register user successfully', async () => {
+    const { result } = renderHook(() => useAuth())
     
-    fireEvent.click(screen.getByText('Click me'))
-    expect(handleClick).toHaveBeenCalledTimes(1)
+    await act(async () => {
+      const response = await result.current.signUp(
+        'test@example.com',
+        'password123',
+        { nome: 'Test User' }
+      )
+      expect(response.error).toBeNull()
+    })
   })
 
-  it('applies correct styles', () => {
-    render(<Button variant="primary">Click me</Button>)
-    expect(screen.getByText('Click me')).toHaveClass('bg-gradient-tech')
+  it('should login user successfully', async () => {
+    const { result } = renderHook(() => useAuth())
+    
+    await act(async () => {
+      const response = await result.current.signIn(
+        'test@example.com',
+        'password123'
+      )
+      expect(response.error).toBeNull()
+      expect(result.current.user).toBeTruthy()
+    })
+  })
+
+  it('should logout user successfully', async () => {
+    const { result } = renderHook(() => useAuth())
+    
+    await act(async () => {
+      await result.current.signOut()
+      expect(result.current.user).toBeNull()
+    })
   })
 })
 ```
@@ -914,7 +1102,7 @@ describe('Button Component', () => {
 
 ### 🌐 Opções de Deploy
 
-#### 1. 🔥 Vercel (Recomendado)
+#### 1. 🔥 Vercel (Recomendado para Frontend)
 ```bash
 # Install Vercel CLI
 npm i -g vercel
@@ -926,22 +1114,36 @@ vercel
 vercel --prod
 ```
 
-#### 2. 💜 Netlify
-```bash
-# Build do projeto
-npm run build
-
-# Deploy via Netlify CLI
-netlify deploy --prod --dir=dist
-```
-
-#### 3. 🚀 Railway
+#### 2. 🚀 Railway (Fullstack)
 ```bash
 # Connect Railway
 railway login
 
 # Deploy
 railway up
+```
+
+#### 3. ☸️ Kubernetes (Produção)
+```bash
+# Apply configurações
+kubectl apply -f k8s/
+
+# Verificar status
+kubectl get pods
+kubectl get services
+kubectl get ingress
+```
+
+#### 4. 🐳 Docker Swarm
+```bash
+# Inicializar swarm
+docker swarm init
+
+# Deploy stack
+docker stack deploy -c docker-compose.yml helpdesk-pro
+
+# Verificar serviços
+docker service ls
 ```
 
 ### ⚙️ Configurações de Produção
@@ -955,36 +1157,18 @@ VITE_SUPABASE_ANON_KEY=sua-chave-anonima-prod
 # 🌍 Produção - App
 VITE_APP_URL=https://seu-dominio.com
 VITE_APP_ENV=production
-```
+NODE_ENV=production
 
-#### Vercel Configuration
-```json
-// vercel.json
-{
-  "framework": "vite",
-  "buildCommand": "npm run build",
-  "devCommand": "npm run dev",
-  "installCommand": "npm install",
-  "outputDirectory": "dist",
-  "functions": {
-    "app/api/**/*.ts": {
-      "runtime": "nodejs18.x"
-    }
-  },
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ]
-}
+# 🔧 Performance
+VITE_ENABLE_ANALYTICS=true
+VITE_SENTRY_DSN=sua-sentry-dsn
 ```
 
 ### 🔒 Configurações de Segurança
 
 #### Headers de Segurança
 ```typescript
-// next.config.js ou netlify.toml
+// Configurações de segurança para produção
 const securityHeaders = [
   {
     key: 'X-DNS-Prefetch-Control',
@@ -1001,6 +1185,10 @@ const securityHeaders = [
   {
     key: 'X-Frame-Options',
     value: 'DENY'
+  },
+  {
+    key: 'X-XSS-Protection',
+    value: '1; mode=block'
   }
 ]
 ```
@@ -1020,7 +1208,7 @@ git clone https://github.com/SEU-USUARIO/helpdesk-pro.git
 cd helpdesk-pro
 
 # Adicione o repositório original como upstream
-git remote add upstream https://github.com/USUARIO-ORIGINAL/helpdesk-pro.git
+git remote add upstream https://github.com/helpdesk-pro/helpdesk-pro.git
 ```
 
 #### 2. 🌿 Crie uma Branch
@@ -1036,7 +1224,7 @@ git checkout -b fix/correcao-bug
 ```bash
 # Faça suas alterações e commits
 git add .
-git commit -m "feat: adiciona nova funcionalidade incrível"
+git commit -m "feat: adiciona sistema de notificações em tempo real"
 
 # Use Conventional Commits:
 # feat: nova funcionalidade
@@ -1045,6 +1233,7 @@ git commit -m "feat: adiciona nova funcionalidade incrível"
 # style: formatação
 # refactor: refatoração
 # test: testes
+# ci: integração contínua
 ```
 
 #### 4. 🚀 Envie sua Contribuição
@@ -1062,7 +1251,10 @@ git push origin feature/nova-funcionalidade
 - [ ] 📚 Documentação atualizada
 - [ ] 🎨 ESLint/Prettier executado
 - [ ] 🔄 Testado em múltiplos dispositivos
+- [ ] 🔐 Testes de autenticação passando
 - [ ] 📝 Descrição clara no PR
+- [ ] 🐳 Docker build funcionando
+- [ ] ☸️ K8s manifests atualizados
 
 ### 🐛 Reportando Bugs
 
@@ -1081,37 +1273,19 @@ Uma descrição clara do que está acontecendo.
 O que deveria acontecer.
 
 **📱 Ambiente**
-- OS: [ex: iOS]
-- Browser: [ex: chrome, safari]
-- Versão: [ex: 22]
+- OS: [ex: Windows 10]
+- Browser: [ex: Chrome 96]
+- Versão: [ex: 2.0.1]
+- Autenticado: [Sim/Não]
+
+**📊 Logs**
+```
+Cole aqui logs relevantes
 ```
 
----
-
-## 📊 Roadmap
-
-### 🎯 Próximas Funcionalidades
-
-#### 🚀 Versão 2.0 (Q1 2025)
-- [ ] **🤖 IA Assistente**: ChatBot para suporte automático
-- [ ] **📊 Analytics Avançado**: Dashboards com BI
-- [ ] **📱 App Mobile**: React Native iOS/Android
-- [ ] **🔔 Notificações Push**: Alerts em tempo real
-- [ ] **📞 Integração VoIP**: Chamadas direto no sistema
-
-#### 🎨 Versão 2.1 (Q2 2025)  
-- [ ] **🎭 Temas Personalizáveis**: Dark/Light/Custom
-- [ ] **🗣️ Multi-idiomas**: i18n completo
-- [ ] **📋 Workflows**: Automação de processos
-- [ ] **📊 Relatórios PDF**: Geração automática
-- [ ] **🔗 API Pública**: Integrações externas
-
-#### 🌟 Versão 3.0 (Q3 2025)
-- [ ] **☁️ Multi-tenant**: SaaS completo
-- [ ] **🔐 SSO**: SAML/OAuth2 enterprise
-- [ ] **📈 Machine Learning**: Previsões inteligentes
-- [ ] **🌍 CDN Global**: Performance mundial
-- [ ] **🏢 White Label**: Personalização total
+**📷 Screenshots**
+Se aplicável, adicione screenshots.
+```
 
 ---
 
@@ -1123,7 +1297,7 @@ O que deveria acontecer.
 |-------|-----------|------|
 | **💬 Discord** | Chat da comunidade | [Discord](https://discord.gg/helpdesk-pro) |
 | **📧 Email** | Suporte técnico | suporte@helpdeskpro.com |
-| **🐙 GitHub Issues** | Bugs e features | [Issues](https://github.com/seu-usuario/helpdesk-pro/issues) |
+| **🐙 GitHub Issues** | Bugs e features | [Issues](https://github.com/helpdesk-pro/helpdesk-pro/issues) |
 | **📚 Documentação** | Guias e tutoriais | [Docs](https://docs.helpdeskpro.com) |
 | **📺 YouTube** | Video tutoriais | [Canal](https://youtube.com/helpdeskpro) |
 
@@ -1138,33 +1312,92 @@ O que deveria acontecer.
 2. Vá em Authentication > Users  
 3. Encontre o usuário e clique em "Reset Password"
 4. O usuário receberá email para redefinir
+
+# Via código
+await supabase.auth.resetPasswordForEmail('user@email.com')
 ```
 </details>
 
 <details>
-<summary><strong>🔧 Como configurar SMTP customizado?</strong></summary>
-
-```env
-# No arquivo .env
-VITE_SMTP_HOST=seu-smtp.com
-VITE_SMTP_PORT=587
-VITE_SMTP_USER=seu-usuario
-VITE_SMTP_PASS=sua-senha
-```
-</details>
-
-<details>
-<summary><strong>📊 Como fazer backup dos dados?</strong></summary>
+<summary><strong>🐳 Como fazer build Docker local?</strong></summary>
 
 ```bash
-# Via CLI do Supabase
-supabase db dump --db-url "sua-connection-string" > backup.sql
+# Build do frontend
+docker build -t helpdesk-pro/frontend .
 
-# Via Dashboard
-1. Database > Backups
-2. Create backup > Download
+# Build do backend  
+cd backend
+docker build -t helpdesk-pro/backend .
+
+# Executar com docker-compose
+docker-compose up -d
 ```
 </details>
+
+<details>
+<summary><strong>☸️ Como fazer deploy no Kubernetes?</strong></summary>
+
+```bash
+# Aplicar todas as configurações
+kubectl apply -f k8s/
+
+# Verificar status
+kubectl get pods
+kubectl get services
+
+# Ver logs
+kubectl logs -f deployment/helpdesk-frontend
+```
+</details>
+
+<details>
+<summary><strong>🔐 Problemas de autenticação?</strong></summary>
+
+```bash
+# Verificar configurações do Supabase
+1. Site URL em Authentication > URL Configuration
+2. Redirect URLs configuradas corretamente
+3. RLS policies habilitadas
+4. Função handle_new_user criada
+
+# Limpar cache do navegador
+localStorage.clear()
+sessionStorage.clear()
+```
+</details>
+
+---
+
+## 📊 Roadmap
+
+### 🎯 Próximas Funcionalidades
+
+#### 🚀 Versão 2.1 (Q1 2025)
+- [ ] **🤖 IA Assistente**: ChatBot para suporte automático
+- [ ] **📊 Analytics Avançado**: Dashboards com BI
+- [ ] **📱 App Mobile**: React Native iOS/Android
+- [ ] **🔔 Notificações Push**: Alerts em tempo real
+- [ ] **📞 Integração VoIP**: Chamadas direto no sistema
+- [ ] **🔐 2FA**: Autenticação de dois fatores
+- [ ] **👥 Roles Avançados**: Sistema de permissões granular
+
+#### 🎨 Versão 2.2 (Q2 2025)  
+- [ ] **🎭 Temas Personalizáveis**: Dark/Light/Custom
+- [ ] **🗣️ Multi-idiomas**: i18n completo
+- [ ] **📋 Workflows**: Automação de processos
+- [ ] **📊 Relatórios PDF**: Geração automática
+- [ ] **🔗 API Pública**: Integrações externas
+- [ ] **📈 Monitoring**: Grafana + Prometheus
+- [ ] **🔍 Logs Centralizados**: ELK Stack
+
+#### 🌟 Versão 3.0 (Q3 2025)
+- [ ] **☁️ Multi-tenant**: SaaS completo
+- [ ] **🔐 SSO**: SAML/OAuth2 enterprise
+- [ ] **📈 Machine Learning**: Previsões inteligentes
+- [ ] **🌍 CDN Global**: Performance mundial
+- [ ] **🏢 White Label**: Personalização total
+- [ ] **🚀 Microservices**: Arquitetura distribuída
+- [ ] **⚡ Edge Computing**: Deploy global
 
 ---
 
@@ -1175,7 +1408,7 @@ Este projeto está licenciado sob a **MIT License** - veja o arquivo [LICENSE.md
 ```
 MIT License
 
-Copyright (c) 2024 HelpDesk Pro
+Copyright (c) 2025 HelpDesk Pro
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -1207,13 +1440,16 @@ SOFTWARE.
 - **🟢 Supabase**: Por democratizar o backend
 - **🧩 shadcn**: Por componentes UI perfeitos
 - **🎭 Lucide**: Por ícones lindos e consistentes
+- **🐳 Docker**: Por simplificar containerização
+- **☸️ Kubernetes**: Por orquestração robusta
+- **🚀 Jenkins**: Por CI/CD confiável
 - **🌍 Open Source Community**: Por inspiração constante
 
 ### 🏆 Contribuidores
 
 <div align="center">
 
-[![Contributors](https://contrib.rocks/image?repo=seu-usuario/helpdesk-pro)](https://github.com/seu-usuario/helpdesk-pro/graphs/contributors)
+[![Contributors](https://contrib.rocks/image?repo=helpdesk-pro/helpdesk-pro)](https://github.com/helpdesk-pro/helpdesk-pro/graphs/contributors)
 
 **Obrigado a todos que contribuíram para este projeto! 🚀**
 
@@ -1225,10 +1461,12 @@ SOFTWARE.
 
 ### 🚀 **Desenvolvido com ❤️ e muito ☕ no Brasil**
 
-[![Made in Brazil](https://img.shields.io/badge/Made%20in-Brazil-green?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiBmaWxsPSIjMDA5MjM5Ii8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjgiIGZpbGw9IiNGRkRGMDAiLz4KPC9zdmc+)](https://github.com/seu-usuario/helpdesk-pro)
+[![Made in Brazil](https://img.shields.io/badge/Made%20in-Brazil-green?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiBmaWxsPSIjMDA5MjM5Ii8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjgiIGZpbGw9IiNGRkRGMDAiLz4KPC9zdmc+)](https://github.com/helpdesk-pro/helpdesk-pro)
+
+**🎯 Sistema Completo • 🔐 Autenticação Robusta • 🐳 Docker Ready • ☸️ Kubernetes Native • 🚀 CI/CD Integrado**
 
 **Se este projeto te ajudou, considere dar uma ⭐!**
 
-[⭐ Dar uma estrela](https://github.com/seu-usuario/helpdesk-pro) • [🐦 Seguir no Twitter](https://twitter.com/helpdeskpro) • [💼 LinkedIn](https://linkedin.com/company/helpdeskpro)
+[⭐ Dar uma estrela](https://github.com/helpdesk-pro/helpdesk-pro) • [🐦 Seguir no Twitter](https://twitter.com/helpdeskpro) • [💼 LinkedIn](https://linkedin.com/company/helpdeskpro)
 
 </div>

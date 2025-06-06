@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Monitor, Eye, EyeOff, ArrowLeft, User, Mail, Lock, Building } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+import { useAuth } from "@/hooks/useAuth";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -22,6 +22,14 @@ const Register = () => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const { signUp, user, loading } = useAuth();
+
+  useEffect(() => {
+    // Redirecionar se já estiver logado
+    if (!loading && user) {
+      navigate("/dashboard");
+    }
+  }, [user, loading, navigate]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -55,23 +63,24 @@ const Register = () => {
     setIsLoading(true);
 
     try {
-      const { data, error } = await supabase.auth.signUp({
-        email: formData.email,
-        password: formData.password,
-        options: {
-          data: {
-            nome: formData.nome,
-            empresa: formData.empresa,
-            telefone: formData.telefone
-          }
-        }
+      const { error } = await signUp(formData.email, formData.password, {
+        nome: formData.nome,
+        empresa: formData.empresa,
+        telefone: formData.telefone
       });
 
-      if (error) throw error;
+      if (error) {
+        toast({
+          title: "Erro no registro",
+          description: error.message || "Falha ao criar conta",
+          variant: "destructive"
+        });
+        return;
+      }
 
       toast({
         title: "Sucesso!",
-        description: "Conta criada com sucesso! Você já pode fazer login.",
+        description: "Conta criada com sucesso! Verifique seu e-mail para confirmar.",
       });
       
       navigate("/login");
@@ -79,13 +88,21 @@ const Register = () => {
       console.error('Erro no registro:', error);
       toast({
         title: "Erro",
-        description: error.message || "Falha ao criar conta. Tente novamente.",
+        description: "Falha ao criar conta. Tente novamente.",
         variant: "destructive"
       });
     } finally {
       setIsLoading(false);
     }
   };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-dark flex items-center justify-center">
+        <div className="text-tech-blue">Carregando...</div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-dark flex items-center justify-center px-4">

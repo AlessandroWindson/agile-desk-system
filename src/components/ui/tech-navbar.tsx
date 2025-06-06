@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { Menu, X, Terminal, Code, Zap, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { useAuth } from "@/hooks/useAuth";
+import { UserProfileMenu } from "./user-profile-menu";
 
 interface TechNavbarProps {
   onToggleSidebar: () => void;
@@ -11,6 +13,7 @@ interface TechNavbarProps {
 
 export const TechNavbar = ({ onToggleSidebar, isSidebarOpen }: TechNavbarProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { user, loading } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -77,18 +80,28 @@ export const TechNavbar = ({ onToggleSidebar, isSidebarOpen }: TechNavbarProps) 
 
           {/* Action Buttons */}
           <div className="flex items-center space-x-3">
-            <Link to="/login" className="hidden sm:block">
-              <Button variant="outline" size="sm" className="border-tech-blue/30 text-tech-blue hover:bg-tech-blue/10 hover:border-tech-blue/50 transition-all duration-300">
-                Login
-              </Button>
-            </Link>
-            <Link to="/register">
-              <Button size="sm" className="bg-gradient-tech hover:opacity-90 text-white border-0 hover:scale-105 transition-all duration-300 shadow-lg shadow-tech-blue/25">
-                <Zap className="w-4 h-4 mr-1" />
-                Start
-                <ChevronRight className="w-3 h-3 ml-1" />
-              </Button>
-            </Link>
+            {!loading && (
+              <>
+                {user ? (
+                  <UserProfileMenu />
+                ) : (
+                  <>
+                    <Link to="/login" className="hidden sm:block">
+                      <Button variant="outline" size="sm" className="border-tech-blue/30 text-tech-blue hover:bg-tech-blue/10 hover:border-tech-blue/50 transition-all duration-300">
+                        Login
+                      </Button>
+                    </Link>
+                    <Link to="/register">
+                      <Button size="sm" className="bg-gradient-tech hover:opacity-90 text-white border-0 hover:scale-105 transition-all duration-300 shadow-lg shadow-tech-blue/25">
+                        <Zap className="w-4 h-4 mr-1" />
+                        Start
+                        <ChevronRight className="w-3 h-3 ml-1" />
+                      </Button>
+                    </Link>
+                  </>
+                )}
+              </>
+            )}
           </div>
         </div>
       </div>

@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Monitor, Eye, EyeOff, ArrowLeft, Mail, Lock } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+import { useAuth } from "@/hooks/useAuth";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -17,17 +17,14 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const { signIn, user, loading } = useAuth();
 
   useEffect(() => {
-    // Verificar se já está logado
-    const checkUser = async () => {
-      const { data: { session } } = await supabase.auth.getSession();
-      if (session) {
-        navigate("/dashboard");
-      }
-    };
-    checkUser();
-  }, [navigate]);
+    // Redirecionar se já estiver logado
+    if (!loading && user) {
+      navigate("/dashboard");
+    }
+  }, [user, loading, navigate]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -42,32 +39,42 @@ const Login = () => {
     setIsLoading(true);
 
     try {
-      const { data, error } = await supabase.auth.signInWithPassword({
-        email: formData.email,
-        password: formData.password,
-      });
+      const { error } = await signIn(formData.email, formData.password);
 
-      if (error) throw error;
-
-      if (data.user) {
+      if (error) {
         toast({
-          title: "Login realizado!",
-          description: "Bem-vindo ao HelpDesk Pro",
+          title: "Erro no login",
+          description: error.message || "E-mail ou senha incorretos",
+          variant: "destructive"
         });
-        
-        navigate("/dashboard");
+        return;
       }
+
+      toast({
+        title: "Login realizado!",
+        description: "Bem-vindo ao HelpDesk Pro",
+      });
+      
+      navigate("/dashboard");
     } catch (error: any) {
       console.error('Erro no login:', error);
       toast({
         title: "Erro",
-        description: error.message || "E-mail ou senha incorretos",
+        description: "Falha no login. Tente novamente.",
         variant: "destructive"
       });
     } finally {
       setIsLoading(false);
     }
   };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-dark flex items-center justify-center">
+        <div className="text-tech-blue">Carregando...</div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-dark flex items-center justify-center px-4">
